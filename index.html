@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DroneTech | Майбутнє авіації</title>
+    <title>DroneTech | Світ Безпілотників</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
     
     <style>
@@ -16,7 +16,15 @@
             --text-gray: #8b949e;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
             background-color: var(--bg-dark);
@@ -38,8 +46,9 @@
             padding: 0 20px;
         }
 
+        /* --- Навігація --- */
         header {
-            background: rgba(13, 17, 23, 0.9);
+            background: rgba(13, 17, 23, 0.95);
             backdrop-filter: blur(10px);
             padding: 15px 0;
             position: sticky;
@@ -54,14 +63,33 @@
             align-items: center;
         }
 
-        .logo { font-size: 1.2rem; color: var(--neon-blue); text-shadow: 0 0 10px var(--neon-blue); }
+        .logo {
+            font-size: 1.3rem;
+            color: var(--neon-blue);
+            text-shadow: 0 0 10px var(--neon-blue);
+        }
 
-        .nav-links { display: flex; list-style: none; gap: 20px; }
-        .nav-links a { text-decoration: none; color: var(--text-white); font-size: 0.8rem; transition: 0.3s; }
-        .nav-links a:hover { color: var(--neon-blue); }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
 
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-white);
+            font-size: 0.85rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--neon-blue);
+            text-shadow: 0 0 8px var(--neon-blue);
+        }
+
+        /* --- Анімована кнопка --- */
         .btn-contact {
-            padding: 8px 15px;
+            padding: 10px 20px;
             background: transparent;
             color: var(--neon-green);
             border: 2px solid var(--neon-green);
@@ -69,34 +97,36 @@
             cursor: pointer;
             transition: 0.4s;
             border-radius: 5px;
-            font-size: 0.8rem;
+            font-weight: bold;
         }
 
         .btn-contact:hover {
             background: var(--neon-green);
             color: #000;
-            box-shadow: 0 0 15px var(--neon-green);
+            box-shadow: 0 0 20px var(--neon-green);
         }
 
+        /* --- Hero Секція --- */
         .hero {
-            padding: 60px 0;
+            padding: 100px 0;
             text-align: center;
             background: radial-gradient(circle at center, #1a2332 0%, #0d1117 100%);
         }
 
         .hero h1 {
-            font-size: clamp(1.5rem, 8vw, 3rem); /* Адаптивний розмір шрифту */
-            margin-bottom: 15px;
+            font-size: clamp(2rem, 8vw, 4rem);
+            margin-bottom: 20px;
             background: linear-gradient(90deg, #fff, var(--neon-blue));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .section { padding: 40px 0; }
+        /* --- Секція Історії --- */
+        .section { padding: 80px 0; }
 
         .history-content {
             display: flex;
-            gap: 30px;
+            gap: 40px;
             align-items: center;
             flex-wrap: wrap;
         }
@@ -107,50 +137,98 @@
             flex: 1;
             min-width: 300px;
             border: 2px solid var(--neon-blue);
+            box-shadow: 0 0 20px rgba(0, 210, 255, 0.2);
             border-radius: 10px;
             overflow: hidden;
-            background: #161b22;
         }
 
         .history-image img {
             width: 100%;
-            height: auto;
             display: block;
-            object-fit: cover;
+            transition: 0.5s;
         }
 
-        .grid {
+        /* --- Ера Дронів (Технології) --- */
+        .era-section {
+            background: rgba(22, 27, 34, 0.5);
+            padding: 60px 0;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .era-content { text-align: center; max-width: 800px; margin: 0 auto; }
+
+        .tech-tags {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .tag {
+            background: rgba(0, 210, 255, 0.1);
+            border: 1px solid var(--neon-blue);
+            color: var(--neon-blue);
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        /* --- Сітка Класифікації --- */
+        .classification-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 50px;
         }
 
         .card {
             background: var(--card-bg);
-            padding: 25px;
+            padding: 30px;
             border-radius: 15px;
             border: 1px solid rgba(255, 255, 255, 0.05);
             transition: 0.4s;
         }
 
         .card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
             border-color: var(--neon-blue);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        .card h3 { color: var(--neon-blue); margin-bottom: 10px; }
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .icon-box { font-size: 2rem; }
+
+        .card h3 { color: var(--neon-blue); font-size: 1.1rem; }
+
+        .card-purpose {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: var(--neon-green);
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
 
         footer {
             text-align: center;
-            padding: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 50px;
             color: var(--text-gray);
-            font-size: 0.8rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        @media (max-width: 600px) {
+        /* --- Адаптивність --- */
+        @media (max-width: 768px) {
             .nav-links { display: none; }
+            .history-content { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
@@ -162,8 +240,8 @@
                 <div class="logo">DRONE.TECH</div>
                 <ul class="nav-links">
                     <li><a href="#history">Історія</a></li>
+                    <li><a href="#era">Технології</a></li>
                     <li><a href="#class">Класифікація</a></li>
-                    <li><a href="#future">Майбутнє</a></li>
                 </ul>
                 <button class="btn-contact">Зв'язок</button>
             </nav>
@@ -173,51 +251,110 @@
     <section class="hero">
         <div class="container">
             <h1>МАЙБУТНЄ В НЕБІ</h1>
-            <p style="color: var(--text-gray)">Досліджуйте світ безпілотників від 1917 року до сьогодні.</p>
+            <p style="color: var(--text-gray); font-size: 1.1rem;">Від перших прототипів 1917 року до інтелектуальних систем сьогодення.</p>
         </div>
     </section>
 
     <section id="history" class="container section">
-        <h2 style="margin-bottom: 25px; color: var(--neon-blue);">Перший у світі: Hewitt-Sperry</h2>
+        <h2 style="margin-bottom: 30px; color: var(--neon-blue);">Перший прототип: Hewitt-Sperry</h2>
         <div class="history-content">
             <div class="history-image">
-                <img src="drone.jpg" onerror="this.src='https://military-history.fandom.com/wiki/Hewitt-Sperry_Automatic_Airplane?file=Hewitt-Sperry_Automatic_Airplane.jpg'; this.onerror=null;" alt="Hewitt-Sperry Automatic Airplane">
+                <img src="drone.jpg" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/5/57/Hewitt-Sperry_Automatic_Airplane.jpg';" alt="Hewitt-Sperry Automatic Airplane">
             </div>
             <div class="history-text">
-                <h3>1917: Початок ери</h3>
-                <p><strong>Hewitt-Sperry Automatic Airplane</strong> — це «дідусь» усіх сучасних дронів. Створений під час Першої світової, він керувався автоматичним пілотом на базі гіроскопів.</p>
-                <p style="margin-top: 10px; color: var(--text-gray);">Його розробляли як безпілотну торпеду, здатну нести вибухівку. Хоча проект не став масовим, він довів, що літаками можна керувати без людини на борту.</p>
+                <h3>Історичний контекст</h3>
+                <p>У 1917 році з'явився <strong>Hewitt-Sperry Automatic Airplane</strong>. Це був перший безпілотний літальний апарат, керований гіроскопами. Його створювали як «літаючу торпеду» для військових цілей.</p>
+                <p style="margin-top: 15px;">Цей апарат міг автоматично підтримувати курс і висоту, що стало фундаментом для всієї сучасної безпілотної авіації та крилатих ракет.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="era" class="era-section">
+        <div class="container era-content">
+            <h2 style="color: var(--neon-blue); margin-bottom: 20px;">ЯК ПОЧИНАЛАСЯ ЕРА ДРОНІВ</h2>
+            <p>Перехід від механічних систем до сучасних дронів відбувся завдяки цифровому прориву. Винахід <strong>радіокерування</strong> дозволив пілотам контролювати політ із землі, а впровадження <strong>GPS</strong> та <strong>літієвих акумуляторів</strong> зробило дрони автономними та витривалими.</p>
+            <div class="tech-tags">
+                <span class="tag">Радіокерування</span>
+                <span class="tag">GPS-навігація</span>
+                <span class="tag">Li-Po батареї</span>
+                <span class="tag">AI Моніторинг</span>
             </div>
         </div>
     </section>
 
     <section id="class" class="container section">
-        <h2 style="text-align: center; margin-bottom: 30px;">Класифікація</h2>
-        <div class="grid">
+        <h2 style="text-align: center; margin-bottom: 40px;">КЛАСИФІКАЦІЯ ТА ПРИЗНАЧЕННЯ</h2>
+        <div class="classification-grid">
+            
             <div class="card">
-                <h3>FPV</h3>
-                <p>Висока швидкість та повний контроль. Ідеальні для спорту та розвідки.</p>
+                <div class="card-header">
+                    <span class="icon-box">🎮</span>
+                    <h3>FPV-дрони</h3>
+                </div>
+                <p>Високошвидкісні дрони з трансляцією відео в реальному часі на окуляри пілота.</p>
+                <p class="card-purpose">Призначення: Спорт, перегони та екстремальна зйомка.</p>
             </div>
+
             <div class="card">
-                <h3>Агродрони</h3>
-                <p>Допомагають фермерам поливати поля та стежити за врожаєм.</p>
+                <div class="card-header">
+                    <span class="icon-box">📸</span>
+                    <h3>Споживчі (Civilian)</h3>
+                </div>
+                <p>Компактні дрони з якісними камерами для фото та відео (наприклад, серія DJI).</p>
+                <p class="card-purpose">Призначення: Подорожі, блоги та професійна зйомка.</p>
             </div>
+
             <div class="card">
-                <h3>Вантажні</h3>
-                <p>Доставка ліків та посилок у найвіддаленіші куточки планети.</p>
+                <div class="card-header">
+                    <span class="icon-box">🏗️</span>
+                    <h3>Промислові</h3>
+                </div>
+                <p>Важкі дрони з тепловізорами та лазерними сканерами для інспекцій.</p>
+                <p class="card-purpose">Призначення: Моніторинг ЛЕП, мостів та будівництва.</p>
             </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="icon-box">🌱</span>
+                    <h3>Сільськогосподарські</h3>
+                </div>
+                <p>Спеціалізовані БПЛА для обробки великих площ землі.</p>
+                <p class="card-purpose">Призначення: Обприскування полів та аналіз врожаю.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="icon-box">🛡️</span>
+                    <h3>Військові</h3>
+                </div>
+                <p>Автономні системи для виконання тактичних та стратегічних місій.</p>
+                <p class="card-purpose">Призначення: Розвідка та спостереження.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="icon-box">🚑</span>
+                    <h3>Рятувальні</h3>
+                </div>
+                <p>Дрони для роботи в зонах лиха та важкодоступних місцях.</p>
+                <p class="card-purpose">Призначення: Пошук людей та доставка медикаментів.</p>
+            </div>
+
         </div>
     </section>
 
     <footer>
-        <p>© 2026 DroneTech | Розроблено для GitHub Pages</p>
+        <p>© 2026 DroneTech | Проект Івана Садовського</p>
     </footer>
 
     <script>
+        // Плавний скрол
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
         });
     </script>
