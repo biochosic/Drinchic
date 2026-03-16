@@ -87,7 +87,7 @@
             text-shadow: 0 0 8px var(--neon-blue);
         }
 
-        /* --- Анімована кнопка --- */
+        /* --- Кнопка --- */
         .btn-contact {
             padding: 10px 20px;
             background: transparent;
@@ -145,10 +145,9 @@
         .history-image img {
             width: 100%;
             display: block;
-            transition: 0.5s;
         }
 
-        /* --- Ера Дронів (Технології) --- */
+        /* --- Ера Дронів --- */
         .era-section {
             background: rgba(22, 27, 34, 0.5);
             padding: 60px 0;
@@ -176,7 +175,7 @@
             font-family: 'Orbitron', sans-serif;
         }
 
-        /* --- Сітка Класифікації --- */
+        /* --- Класифікація --- */
         .classification-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -218,14 +217,30 @@
             font-weight: bold;
         }
 
+        /* --- Footer --- */
         footer {
             text-align: center;
-            padding: 50px;
-            color: var(--text-gray);
+            padding: 60px 20px;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
+            background: #0a0d12;
         }
 
-        /* --- Адаптивність --- */
+        .footer-copyright {
+            color: var(--text-gray);
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+        }
+
+        .signature {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--neon-blue);
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 10px var(--neon-blue);
+            margin-top: 10px;
+        }
+
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .history-content { flex-direction: column; text-align: center; }
@@ -251,7 +266,7 @@
     <section class="hero">
         <div class="container">
             <h1>МАЙБУТНЄ В НЕБІ</h1>
-            <p style="color: var(--text-gray); font-size: 1.1rem;">Від перших прототипів 1917 року до інтелектуальних систем сьогодення.</p>
+            <p style="color: var(--text-gray); font-size: 1.1rem;">Досліджуйте світ безпілотників від 1917 року до сьогодні.</p>
         </div>
     </section>
 
@@ -263,100 +278,8 @@
             </div>
             <div class="history-text">
                 <h3>Історичний контекст</h3>
-                <p>У 1917 році з'явився <strong>Hewitt-Sperry Automatic Airplane</strong>. Це був перший безпілотний літальний апарат, керований гіроскопами. Його створювали як «літаючу торпеду» для військових цілей.</p>
-                <p style="margin-top: 15px;">Цей апарат міг автоматично підтримувати курс і висоту, що стало фундаментом для всієї сучасної безпілотної авіації та крилатих ракет.</p>
+                <p>У 1917 році з'явився <strong>Hewitt-Sperry Automatic Airplane</strong>. Це був перший безпілотний літальний апарат, керований гіроскопами. Його створювали як «літаючу торпеду».</p>
+                <p style="margin-top: 15px;">Цей апарат довів, що літаками можна керувати автоматично, заклавши основу для сучасних БПЛА та крилатих ракет.</p>
             </div>
         </div>
-    </section>
-
-    <section id="era" class="era-section">
-        <div class="container era-content">
-            <h2 style="color: var(--neon-blue); margin-bottom: 20px;">ЯК ПОЧИНАЛАСЯ ЕРА ДРОНІВ</h2>
-            <p>Перехід від механічних систем до сучасних дронів відбувся завдяки цифровому прориву. Винахід <strong>радіокерування</strong> дозволив пілотам контролювати політ із землі, а впровадження <strong>GPS</strong> та <strong>літієвих акумуляторів</strong> зробило дрони автономними та витривалими.</p>
-            <div class="tech-tags">
-                <span class="tag">Радіокерування</span>
-                <span class="tag">GPS-навігація</span>
-                <span class="tag">Li-Po батареї</span>
-                <span class="tag">AI Моніторинг</span>
-            </div>
-        </div>
-    </section>
-
-    <section id="class" class="container section">
-        <h2 style="text-align: center; margin-bottom: 40px;">КЛАСИФІКАЦІЯ ТА ПРИЗНАЧЕННЯ</h2>
-        <div class="classification-grid">
-            
-            <div class="card">
-                <div class="card-header">
-                    <span class="icon-box">🎮</span>
-                    <h3>FPV-дрони</h3>
-                </div>
-                <p>Високошвидкісні дрони з трансляцією відео в реальному часі на окуляри пілота.</p>
-                <p class="card-purpose">Призначення: Спорт, перегони та екстремальна зйомка.</p>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <span class="icon-box">📸</span>
-                    <h3>Споживчі (Civilian)</h3>
-                </div>
-                <p>Компактні дрони з якісними камерами для фото та відео (наприклад, серія DJI).</p>
-                <p class="card-purpose">Призначення: Подорожі, блоги та професійна зйомка.</p>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <span class="icon-box">🏗️</span>
-                    <h3>Промислові</h3>
-                </div>
-                <p>Важкі дрони з тепловізорами та лазерними сканерами для інспекцій.</p>
-                <p class="card-purpose">Призначення: Моніторинг ЛЕП, мостів та будівництва.</p>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <span class="icon-box">🌱</span>
-                    <h3>Сільськогосподарські</h3>
-                </div>
-                <p>Спеціалізовані БПЛА для обробки великих площ землі.</p>
-                <p class="card-purpose">Призначення: Обприскування полів та аналіз врожаю.</p>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <span class="icon-box">🛡️</span>
-                    <h3>Військові</h3>
-                </div>
-                <p>Автономні системи для виконання тактичних та стратегічних місій.</p>
-                <p class="card-purpose">Призначення: Розвідка та спостереження.</p>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <span class="icon-box">🚑</span>
-                    <h3>Рятувальні</h3>
-                </div>
-                <p>Дрони для роботи в зонах лиха та важкодоступних місцях.</p>
-                <p class="card-purpose">Призначення: Пошук людей та доставка медикаментів.</p>
-            </div>
-
-        </div>
-    </section>
-
-    <footer>
-        <p>© 2026 DroneTech | Проект Івана Садовського</p>
-    </footer>
-
-    <script>
-        // Плавний скрол
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
-</body>
-</html>
+        
